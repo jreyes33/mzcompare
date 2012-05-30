@@ -1,0 +1,218 @@
+* {margin: 0;}
+
+html {height: 100%;}
+
+body {
+    background: #f4f6f5;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 62.5%;
+    height: 100%;
+    padding: 0;
+    margin: 0 auto 0 auto;
+    width: 97.5%;
+    min-width: 750px;
+    max-width: 1200px;
+}
+
+.clearer {clear: both; width: 100%;}
+
+.img {font-size: 0.9em; font-style: italic; padding-bottom: 15px; text-align: center;}
+
+.img img {display:block; margin: 0 auto;}
+
+#social {display: block; margin: 20px auto 0; width: 360px;}
+
+#main {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -37px;
+}
+
+#header {
+    background: #20809b;
+    margin: 0 auto 0 auto;
+    padding: 4px 0 0 0;
+    border-radius: 0 0 7px 7px;
+}
+
+.push {height: 37px;}
+
+#footer {
+    background: #303030;
+    border-radius: 7px 7px 0 0;
+    color: #f4f6f5;
+    height: 17px;
+    text-align: center;
+    font-size: 11px;
+    padding: 10px;
+}
+
+#logo {
+    display: block;
+    width: 73%;
+    padding: 11px 1% 0 1%;
+    float: left;
+    margin: 0 auto;
+}
+
+#links {
+    display: block;
+    width: 20%;
+    padding: 0 18px 0 1%;
+    float: right;
+    margin: 0 auto;
+}
+
+#links ul {
+    list-style-type: none;
+    margin-top: 10px;
+    text-align: right;
+}
+
+#links ul li a:link, #links ul li a:visited {
+	color: #f4f6f5;
+	text-decoration: none;
+}
+
+#links ul li a:hover {color: #303030; text-decoration: underline;}
+
+#flags {
+    text-align: right;
+}
+
+#flags img, #footer img {
+    border: solid black 1px;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#content {
+    font-size: 1.2em;
+    padding: 15px 5px;
+}
+
+#compare {
+	border: 1px solid #ABABAB;
+	border-radius: 7px;
+    display: block;
+    margin: 10px auto 50px;
+    padding: 9px;
+    width: 50%;
+    text-align: center;
+}
+
+.text {
+    width: 75%;
+    border: 1px solid #ABABAB;
+    border-radius: 7px;
+    padding: 0.3em;
+    font-size: 1.4em;
+}
+
+.inputs, .buttons {
+    display: block;
+    margin: 3px auto;
+    text-align: center;
+}
+
+button {
+    margin: 3px 5px;
+}
+
+.add {font-weight: lighter;}
+
+h1 {
+    background: transparent no-repeat url(../img/logo.png);
+    display: block;
+    text-indent: -5000px;
+    text-decoration: none;
+    z-index: 1000;
+    height: 93px;
+    width: 400px;
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+h1 a {
+    display: block;
+    height: 93px;
+    width: 400px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 10px; 
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.25em;
+    text-align: center;
+}
+
+abbr {
+	border-bottom: 1px dotted;
+	cursor:help;
+}
+
+p, li, dl {
+	color: #303030;
+	font-size: 1.2em;
+	line-height: 125%;
+}
+
+p a:link, p a:visited {color: #000000}
+
+p a:hover {text-decoration: none}
+
+p {margin: 1em 0;}
+
+/*dl {padding: 20px 10%;}*/
+
+.adBig {
+    display: block;
+    margin: 0 auto 10px;
+    width: 728px;
+}
+
+.adSmall {
+    display: block;
+    margin: 0 auto 5px;
+    width: 468px;
+}
+
+.tablesorter tbody tr.hl td {background-color: #e5e5e5;}
+
+.tablesorter tbody td.hl {background-color: #e5e5e5;}
+
+.tablesorter caption {font-style: italic; text-align: right;}
+
+td img {
+    border: solid black 1px;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.result {text-align: center; font-weight: bold;}
+
+.home {text-align: right;}
+
+#players, #pager {
+    width: 95%;
+    margin: 0 auto;
+}
+
+#twoTeams tbody tr td:first-child {text-align: right;}
+
+.title {
+	background-color: #e6eeee !important;
+    border: 1px solid #ffffff;
+    font-weight: bold;
+    padding: 3px 15px 3px 3px;
+    text-align: center;
+}

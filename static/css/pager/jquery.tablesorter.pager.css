@@ -1,0 +1,29 @@
+div.tablesorterPager {
+	padding: 5px 0;
+	background-color: #D6D2C2;
+	text-align: center;
+}
+div.tablesorterPager span {
+	padding: 0 5px;
+}
+div.tablesorterPager img {
+    vertical-align: middle;
+}
+div.tablesorterPager input.prev {
+	width: auto;
+	margin-right: 10px;
+}
+div.tablesorterPager input.next {
+	width: auto;
+	margin-left: 10px;
+}
+div.tablesorterPager input {
+	font-size: 0.8em;
+	width: 60px;
+	border: 1px solid black;
+	text-align: center;
+}
+div.tablesorterPager select {
+    font-size: 0.8em;
+    border: 1px solid black;
+}

@@ -1,0 +1,388 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+#   <kacinoman@yahoo.co.id>, 2011.
+# Jonathan Reyes <jonathan.reyes33@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: MZ Compare\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-11 19:42-0500\n"
+"PO-Revision-Date: 2011-07-13 15:44-0500\n"
+"Last-Translator: Jonathan Reyes <jonathan.reyes33@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+#: conf/settings.py:8
+msgid "English"
+msgstr "Inggris"
+
+#: conf/settings.py:9
+#: templates/about.html:8
+msgid "Indonesian"
+msgstr "Indonesia"
+
+#: conf/settings.py:10
+msgid "Spanish"
+msgstr "Spanyol"
+
+#: conf/settings.py:11
+msgid "Portuguese"
+msgstr "Portugis"
+
+#: conf/settings.py:12
+#: templates/about.html:9
+msgid "Swedish"
+msgstr "Swedia"
+
+#: templates/_base.html:3
+msgid "en"
+msgstr "id"
+
+#: templates/_base.html:21
+msgid "MZ Compare - ManagerZone Tool"
+msgstr "MZ Compare - Tool ManagerZone"
+
+#: templates/_base.html:36
+msgid "Home"
+msgstr "Beranda"
+
+#: templates/_base.html:37
+msgid "About"
+msgstr "Tentang"
+
+#: templates/_base.html:38
+msgid "Contact"
+msgstr "Kontak"
+
+#: templates/_base.html:39
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/about.html:5
+msgid "MZ Compare is a tool written in <a href=\"http://python.org/\">Python</a> for <a href=\"http://managerzone.com\">ManagerZone</a>. It's developed and mantained by Jonathan Reyes (username: jreyes33), manager of the ecuadorian team \"Duros FC\" of 2nd division. The idea of developing a tool was motivated by curiosity and by need. The goal is to share something useful for all the managers."
+msgstr "MZ Compare adalah alat yang dibuat <a href=\"http://python.org/\">Python</a> untuk <a href=\"http://managerzone.com\">ManagerZone</a> .Dikembangkan dan diatur oleh Jonathan Reyes (username: jreyes33), manajer tim Ekuador \"Duros FC\" divisi 2. Ide mengembangkan alat ini didorong oleh rasa penasaran dan oleh kebutuhan. Tujuannya adalah untuk berbagi sesuatu yang bermanfaat bagi semua manajer."
+
+#: templates/about.html:6
+msgid "Translation credits:"
+msgstr "Terjemahkan oleh:"
+
+#: templates/about.html:13
+msgid "crest by jreyes33"
+msgstr "di buat oleh jreyes33"
+
+#: templates/contact.html:5
+msgid "Got questions, comments, or suggestions?"
+msgstr "Ada pertanyaan, komentar atau saran?"
+
+#: templates/contact.html:6
+msgid "Send an email to:"
+msgstr "Kirimkan email anda ke:"
+
+#: templates/contact.html:7
+msgid "You can also leave a message in my Guestbook in ManagerZone, username: jreyes33."
+msgstr "Anda bisa memberikan pesan pada Buku Tamu saya di Managerzone, username: jreyes33."
+
+#: templates/error.html:5
+msgid "An error has occurred. Yeah, it can happen to anyone.<br /><br />Entered a valid username and you're still getting this error message? Report it to <a href=\"mailto:contact@mzcompare.com?subject=MZ Compare error report\">contact@mzcompare.com</a><br /><br />Thank you."
+msgstr "Terjadi kesalahan. Hal ini bisa terjadi pada siapa saja. <br /><br /> Coba masukkan kembali nama pengguna anda dan jika anda masih mendapatkan pesan error ini? Laporkan ke <a href=\"mailto:contact@mzcompare.com?subject=MZ Compare error report\">contact@mzcompare.com</a> <br /><br /> Terima kasih."
+
+#: templates/index.html:21
+msgid "Enter another username or team ID"
+msgstr "Masukkan nama pengguna atau ID tim yang lainnya"
+
+#: templates/index.html:21
+#: templates/index.html.py:44
+msgid "Delete"
+msgstr "Hapus"
+
+#: templates/index.html:42
+msgid "Enter one or more usernames or team IDs"
+msgstr "Masukkan satu atau beberapa nama pengguna atau ID tim"
+
+#: templates/index.html:44
+msgid "Enter your username or team ID"
+msgstr "Masukkan nama pengguna anda atau ID tim"
+
+#: templates/index.html:46
+msgid "Add"
+msgstr "Tambahkan"
+
+#: templates/index.html:46
+msgid "Compare"
+msgstr "Bandingkan"
+
+#: templates/index.html:49
+msgid " MZ Compare is a tool for <a href=\"http://managerzone.com\">ManagerZone</a> that allows you to rapidly compare your team with the rest of your league or with other users. Give it a try! Enter your username and click the <strong>Compare</strong> button to compare your team with your league, or click the <strong>Add</strong> button and enter more usernames to compare your team with theirs."
+msgstr "  MZ Compare adalah alat untuk <a href=\"http://managerzone.com\">ManagerZone</a> yang dapat membantu anda untuk membandingkan tim Anda dengan sisa liga anda atau dengan pengguna lain. Silahkan mencoba! Masukkan username dan klik tombol <strong>Bandingkan</strong> untuk membandingkan tim anda dengan liga anda, atau klik tombol <strong>Tambahkan</strong> dan masukkan nama pengguna lain untuk membandingkannya dengan tim anda."
+
+#: templates/matches.html:3
+msgid "Date"
+msgstr "Tanggal"
+
+#: templates/matches.html:4
+msgid "Type"
+msgstr "Tipe"
+
+#: templates/matches.html:6
+msgid "Home Team"
+msgstr "Tim tuan rumah"
+
+#: templates/matches.html:7
+msgid "Result"
+msgstr "Hasil"
+
+#: templates/matches.html:8
+msgid "Away Team"
+msgstr "Tim tamu"
+
+#: templates/matches.html:17
+msgid "Compare these teams"
+msgstr "Bandingkan tim ini"
+
+#: templates/moreTeams.html:40
+#: templates/twoTeams.html:44
+msgid "Teams"
+msgstr "Tim"
+
+#: templates/moreTeams.html:41
+#: templates/oneTeam.html:51
+#: templates/twoTeams.html:45
+msgid "Played matches"
+msgstr "Pertandingan yg dimainkan"
+
+#: templates/moreTeams.html:42
+#: templates/oneTeam.html:52
+#: templates/twoTeams.html:46
+msgid "Scheduled matches"
+msgstr "Jadwal pertandingan"
+
+#: templates/oneTeam.html:50
+msgid "League"
+msgstr "Liga"
+
+#: templates/oneTeam.html:58
+msgid "Standings"
+msgstr "Klasemen"
+
+#: templates/oneTeam.html:61
+#: templates/oneTeam.html.py:78
+#: templates/oneTeam.html:92
+#: templates/oneTeam.html.py:111
+#: templates/twoTeams.html:58
+msgid "Team"
+msgstr "Tim"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Matches played\">M</abbr>"
+msgstr "<abbr title=\"Main\">M</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Won\">W</abbr>"
+msgstr "<abbr title=\"Menang\">W</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Drawn\">D</abbr>"
+msgstr "<abbr title=\"Draw\">D</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Lost\">L</abbr>"
+msgstr "<abbr title=\"Kalah\">K</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Goals scored\">+</abbr>"
+msgstr "<abbr title=\"Memasukkan\">+</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Goals conceded\">-</abbr>"
+msgstr "<abbr title=\"Kemasukan\">-</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Goal difference\">=</abbr>"
+msgstr "<abbr title=\"Selisih gol\">=</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Points\">P</abbr>"
+msgstr "<abbr title=\"Poin\">P</abbr>"
+
+#: templates/oneTeam.html:74
+#: templates/twoTeams.html:51
+msgid "Teams' stats"
+msgstr "Statistik Tim"
+
+#: templates/oneTeam.html:77
+#: templates/oneTeam.html.py:91
+#: templates/oneTeam.html:110
+#: templates/twoTeams.html:54
+msgid "All values are shown in"
+msgstr "Semua nilai ditunjukkan dalam"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Players\">P</abbr>"
+msgstr "<abbr title=\"Pemain\">P</abbr>"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Seniors\">Sr.</abbr>"
+msgstr "<abbr title=\"Senior\">Sr</abbr>"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Youth players\">Y</abbr>"
+msgstr "<abbr title=\"Pemain Muda\">Jr</abbr>"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Foreign players\">F</abbr>"
+msgstr "<abbr title=\"Pemain asing\">As</abbr>"
+
+#: templates/oneTeam.html:78
+#: templates/oneTeam.html.py:92
+#: templates/twoTeams.html:65
+msgid "Total Salary"
+msgstr "Total Gaji"
+
+#: templates/oneTeam.html:78
+#: templates/oneTeam.html.py:92
+msgid "Avg. Salary"
+msgstr "Gaji rata-rata"
+
+#: templates/oneTeam.html:78
+#: templates/oneTeam.html.py:92
+#: templates/twoTeams.html:69
+msgid "Total Value"
+msgstr "Total Nilai"
+
+#: templates/oneTeam.html:78
+#: templates/oneTeam.html.py:92
+msgid "Avg. Value"
+msgstr "Nilai rata-rata"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Seniors Total Value\">Sr. Tot. Value</abbr>"
+msgstr "<abbr title=\"Total Nilai Senior\">Tot. Nilai Sr</abbr>"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Seniors Average Value\">Sr. Avg. Value</abbr>"
+msgstr "<abbr title=\"Nilai rata-rata Senior\">Rt. Nilai Sr</abbr>"
+
+#: templates/oneTeam.html:78
+#: templates/oneTeam.html.py:92
+msgid "Avg. Age"
+msgstr "Umur rata-rata"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Seniors Average Age\">Sr. Avg. Age</abbr>"
+msgstr "<abbr title=\"Usia Rata-rata Senior\">Rt. Umur Sr</abbr>"
+
+#: templates/oneTeam.html:89
+msgid "Top 11"
+msgstr "Top 11"
+
+#: templates/oneTeam.html:107
+msgid "All players"
+msgstr "Semua pemain"
+
+#: templates/oneTeam.html:111
+#: templates/twoTeams.html:59
+msgid "Country"
+msgstr "Negara"
+
+#: templates/oneTeam.html:111
+msgid "Player"
+msgstr "Pemain"
+
+#: templates/oneTeam.html:111
+msgid "Value"
+msgstr "Nilai"
+
+#: templates/oneTeam.html:111
+msgid "Salary"
+msgstr "Gaji"
+
+#: templates/oneTeam.html:111
+msgid "Age"
+msgstr "Umur"
+
+#: templates/twoTeams.html:57
+msgid "Username"
+msgstr "Nama Pengguna"
+
+#: templates/twoTeams.html:60
+msgid "Division"
+msgstr "Divisi"
+
+#: templates/twoTeams.html:61
+msgid "Players"
+msgstr "Pemain"
+
+#: templates/twoTeams.html:62
+msgid "Seniors"
+msgstr "Senior"
+
+#: templates/twoTeams.html:63
+msgid "Youth Players"
+msgstr "Junior"
+
+#: templates/twoTeams.html:64
+msgid "Foreign Players"
+msgstr "Pemain Asing"
+
+#: templates/twoTeams.html:66
+msgid "Average Salary"
+msgstr "Gaji Rata-rata"
+
+#: templates/twoTeams.html:67
+msgid "Top 11 Total Salary"
+msgstr "Total gaji top 11"
+
+#: templates/twoTeams.html:68
+msgid "Top 11 Avg. Salary"
+msgstr "Gaji rata-rata top 11"
+
+#: templates/twoTeams.html:70
+msgid "Average Value"
+msgstr "Nilai Rata-rata"
+
+#: templates/twoTeams.html:71
+msgid "Seniors Total Value"
+msgstr "Total nilai Senior"
+
+#: templates/twoTeams.html:72
+msgid "Seniors Avg. Value"
+msgstr "Nilai Rata-rata Senior"
+
+#: templates/twoTeams.html:73
+msgid "Top 11 Total Value"
+msgstr "Nilai total top 11"
+
+#: templates/twoTeams.html:74
+msgid "Top 11 Avg. Value"
+msgstr "Nilai rata-rata top 11"
+
+#: templates/twoTeams.html:75
+msgid "Average Age"
+msgstr "Umur Rata-rata"
+
+#: templates/twoTeams.html:76
+msgid "Seniors Avg. Age"
+msgstr "Umur Rata-rata Senior"
+
+#: templates/twoTeams.html:77
+msgid "Top 11 Avg. Age"
+msgstr "Umur rata-rata top 11"
+
+#: templates/twoTeams.html:78
+msgid "Most Valuable Player"
+msgstr "Pemain Terbaik"
+
+#: templates/twoTeams.html:79
+msgid "Highest Paid Player"
+msgstr "Pemain bergaji tertinggi"
+
+#: templates/twoTeams.html:80
+msgid "Oldest Player"
+msgstr "Pemain Tertua"
+

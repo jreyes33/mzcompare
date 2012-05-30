@@ -1,0 +1,22 @@
+# Generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+# Python specific
+*.pyc
+*.pyo
+
+# Eclipse and PyDev files
+.project
+.pydevproject
+
+# Project images
+favicon.ico
+static/img/
+static/css/mzc/images/
+static/css/blue/*.gif
+static/css/pager/icons/
+

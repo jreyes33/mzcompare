@@ -1,0 +1,4 @@
+cron:
+- description: weekly teams update
+  url: /tasks/teams_update
+  schedule: every monday 08:00

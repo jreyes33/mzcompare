@@ -1,0 +1,66 @@
+{% load i18n %}
+<!DOCTYPE HTML>
+<html lang="{% trans "en" %}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="ManagerZone tool for comparing your team with your League or other teams. Gets statistics and useful values." />
+    <meta name="keywords" content="managerzone, manager, zone, football, soccer, games, stats, compare" />
+    <link type="image/x-icon" href="favicon.ico" rel="icon" />
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+    {% block extraCSS %}{% endblock %}
+    {% block extraJS %}{% endblock %}
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker("UA-10144665-1");
+    pageTracker._trackPageview();
+    } catch(err) {}</script>
+    <title>{% trans "MZ Compare - ManagerZone Tool" %}</title>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="logo"><h1><a href="http://www.mzcompare.com">MZ Compare</a></h1></div>
+            <div id="links">            
+	            <div id="flags">
+	                <a href="?l=en"><img src="static/img/flags/us.png" alt="English" title="English" /></a>
+	                <a href="?l=es"><img src="static/img/flags/es.png" alt="Espa&ntilde;ol" title="Espa&ntilde;ol"  /></a>
+	                <a href="?l=pt"><img src="static/img/flags/br.png" alt="Portugu&ecirc;s" title="Portugu&ecirc;s" /></a>
+                    <a href="?l=id"><img src="static/img/flags/id.png" alt="Bahasa Indonesia" title="Bahasa Indonesia"  /></a>
+                    <a href="?l=sv"><img src="static/img/flags/se.png" alt="Svenska" title="Svenska" /></a>
+	            </div>
+            <ul>
+                <li><a href="./">{% trans "Home" %} &laquo;</a></li>
+                <li><a href="about.html">{% trans "About" %} &laquo;</a></li>
+                <li><a href="contact.html">{% trans "Contact" %} &laquo;</a></li>
+                <li><a href="http://blog.mzcompare.com" target="_blank">{% trans "Blog" %} &laquo;</a></li>
+            </ul>
+            </div>
+            <div class="clearer"></div>
+        </div>
+        <div id="content">
+        <div class="adBig">
+			<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-5254492723947467";
+			/* MZC-top */
+			google_ad_slot = "6736085862";
+			google_ad_width = 728;
+			google_ad_height = 90;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+        </div>
+        {% block content %}{% endblock %}
+        </div>
+        <div class="push"></div>
+    </div>
+    <div id="footer">
+        &copy; 2009 - 2011 | MZ Compare | jreyes33 <img src="static/img/flags/ec.png" alt="Ecuador" title="Ecuador" />
+    </div>    
+</body>
+</html>

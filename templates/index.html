@@ -1,0 +1,56 @@
+{% extends "_base.html" %}
+{% load i18n %}
+
+{% block extraCSS %}
+<link rel="stylesheet" type="text/css" href="static/css/mzc/jquery-ui-1.8.13.custom.css" />
+{% endblock %}
+
+{% block extraJS %}
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="static/js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="static/js/jquery-ui-1.8.13.custom.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("button.del").button({icons:{primary:"ui-icon-minusthick"}, text: false, disabled: true});
+    $("button.add").button({icons:{primary:"ui-icon-plusthick"}});
+    $("button:submit").button({icons:{primary:"ui-icon-check"}});
+    $('input[name="u"]').first().focus();
+});
+
+$(document).ready(function() {
+    $("button.add").click(function() {
+    	$('<input class="text" placeholder="{% trans "Enter another username or team ID" %}" type="text" name="u" /><button class="del" type="button">{% trans "Delete" %}</button><br />').appendTo("div.inputs");
+	    $("button.del").button({icons:{primary:"ui-icon-minusthick"}, text: false});
+	    $('input[name="u"]').last().focus();
+	    if ($('input[name="u"]').length >= 6)
+    		$("button.add").button("disable");
+    });
+
+    $("button.del").live("click", function() {
+    	$(this).next().remove();
+    	$(this).prev().remove();
+        $(this).remove();
+        $('input[name="u"]').last().focus();
+        if ($("button.add").button("option", "disabled")) 
+            $("button.add").button("enable");
+   });
+});
+</script>
+{% endblock %}
+
+{% block content %}
+        <form name="main" id="compare" method="get" action="compare">
+            <p>{% trans "Enter one or more usernames or team IDs" %}</p>
+            <div class="inputs">
+                <input class="text" placeholder="{% trans "Enter your username or team ID" %}" type="text" name="u" autofocus="autofocus" /><button class="del" type="button">{% trans "Delete" %}</button><br />
+            </div>
+            <div class="buttons"><button class="add" type="button">{% trans "Add" %}</button><button class="submit" type="submit">{% trans "Compare" %}</button></div>
+        </form>
+        <div class="clearer"></div>
+        <p>{% blocktrans %} MZ Compare is a tool for <a href="http://managerzone.com">ManagerZone</a> that allows you to rapidly compare your team with the rest of your league or with other users. Give it a try! Enter your username and click the <strong>Compare</strong> button to compare your team with your league, or click the <strong>Add</strong> button and enter more usernames to compare your team with theirs.{% endblocktrans %}</p><br />
+        <div class="img"><img src="static/img/appengine.gif" alt="Powered by Google App Engine" /></div>
+        <div id="social">
+            <iframe src="http://www.facebook.com/plugins/likebox.php?locale={{ langFB }}&href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FMZCompare%2F244160962276590&amp;width=300&amp;colorscheme=light&amp;show_faces=false&amp;border_color&amp;stream=false&amp;header=false&amp;height=62" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:62px;" allowTransparency="true"></iframe>
+            <g:plusone size="tall" href="http://www.mzcompare.com"></g:plusone>
+        </div>
+ {% endblock %}

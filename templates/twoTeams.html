@@ -1,0 +1,98 @@
+{% extends "oneTeam.html" %}
+{% load i18n %}
+
+{% block extraCSS %}
+<link rel="stylesheet" type="text/css" href="static/css/mzc/jquery-ui-1.8.13.custom.css" />
+<link rel="stylesheet" type="text/css" href="static/css/pager/jquery.tablesorter.pager.css" />
+<link rel="stylesheet" type="text/css" href="static/css/blue/style.css" />
+{% endblock %}
+
+{% block extraJS %}
+<script type="text/javascript" src="static/js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="static/js/jquery-ui-1.8.13.custom.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.tablesorter.pager.js"></script>
+<script type="text/javascript">
+jQuery.tablesorter.addParser({
+    id: "spacedDigit",
+    is: function(s, table) {
+        var c = table.config;
+        return jQuery.tablesorter.isDigit(s.replace(/&nbsp;/g, ""), c);
+    },
+    format: function(s) {
+        return jQuery.tablesorter.formatFloat(s.replace(/&nbsp;/g, ""));
+    },
+    type: "numeric"
+});
+
+$(document).ready(function() {
+    /* tablesorter */
+    $("#players").tablesorter({widthFixed: true, sortList: [[3,1]]});
+    $("#players").tablesorterPager({container: $("#pager"), size: 20, positionFixed: false});
+    /* jquery-ui */
+    $("#tabs").tabs({cache: true, ajaxOptions: {cache: false}});
+    $("#accordion").accordion({autoHeight: false, navigation: true});
+    $("#tabs").bind("tabsload", function() {
+        $("#played").tablesorter({widgets: ['zebra'], headers:{4:{sorter:false}}});
+        $("#scheduled").tablesorter({widgets: ['zebra'], headers:{4:{sorter:false}}});
+    });
+});
+</script>
+{% endblock %}
+
+{% block tabs %}
+<li><a href="#tabs-1">{% trans "Teams" %}</a></li>
+<li><a href="./matches?&tid={{ teamId }}&played=1">{% trans "Played matches" %}</a></li>
+<li><a href="./matches?&tid={{ teamId }}&played=0">{% trans "Scheduled matches" %}</a></li>
+{% endblock %}
+
+{% block standings %}{% endblock %}
+{% block teams %}
+<h2><a href="#teams">{% trans "Teams' stats" %}</a></h2>
+<div>
+<table class="tablesorter" id="twoTeams">
+    <caption>*{% trans "All values are shown in" %} {{ teams.0.teamCurrency }}&nbsp;</caption>
+    <tbody>
+    {% autoescape off %}
+       <tr><td>{{ teams.0.username }}</td><td class="title">{% trans "Username" %}</td><td>{{ teams.1.username }}</td></tr>
+       <tr><td>{{ teams.0.teamName }}</td><td class="title">{% trans "Team" %}</td><td>{{ teams.1.teamName }}</td></tr>
+       <tr><td><img src="static/img/flags/{{ teams.0.countryShortname }}.png" alt="{{ teams.0.countryShortname }}" title="{{ teams.0.countryShortname }}" /></td><td class="title">{% trans "Country" %}</td><td><img src="static/img/flags/{{ teams.1.countryShortname }}.png" alt="{{ teams.1.countryShortname }}" title="{{ teams.1.countryShortname }}" /></td></tr>
+       <tr><td>{{ teams.0.seriesName }}</td><td class="title">{% trans "Division" %}</td><td>{{ teams.1.seriesName }}</td></tr>
+       <tr><td{% if teams.0.nJug > teams.1.nJug %} class="hl"{% endif %}>{{ teams.0.nJug }}</td><td class="title">{% trans "Players" %}</td><td{% if teams.0.nJug < teams.1.nJug %} class="hl"{% endif %}>{{ teams.1.nJug }}</td></tr>
+       <tr><td{% if teams.0.nMay > teams.1.nMay %} class="hl"{% endif %}>{{ teams.0.nMay }}</td><td class="title">{% trans "Seniors" %}</td><td{% if teams.0.nMay < teams.1.nMay %} class="hl"{% endif %}>{{ teams.1.nMay }}</td></tr>
+       <tr><td{% if teams.0.nJuv > teams.1.nJuv %} class="hl"{% endif %}>{{ teams.0.nJuv }}</td><td class="title">{% trans "Youth Players" %}</td><td{% if teams.0.nJuv < teams.1.nJuv %} class="hl"{% endif %}>{{ teams.1.nJuv }}</td></tr>
+       <tr><td{% if teams.0.nExt > teams.1.nExt %} class="hl"{% endif %}>{{ teams.0.nExt }}</td><td class="title">{% trans "Foreign Players" %}</td><td{% if teams.0.nExt < teams.1.nExt %} class="hl"{% endif %}>{{ teams.1.nExt }}</td></tr>
+       <tr><td{% if teams.0.sumM_salary > teams.1.sumM_salary %} class="hl"{% endif %}>{{ teams.0.sumM_salary }}</td><td class="title">{% trans "Total Salary" %}</td><td{% if teams.0.sumM_salary < teams.1.sumM_salary %} class="hl"{% endif %}>{{ teams.1.sumM_salary }}</td></tr>
+       <tr><td{% if teams.0.avgM_salary > teams.1.avgM_salary %} class="hl"{% endif %}>{{ teams.0.avgM_salary|floatformat:2 }}</td><td class="title">{% trans "Average Salary" %}</td><td{% if teams.0.avgM_salary < teams.1.avgM_salary %} class="hl"{% endif %}>{{ teams.1.avgM_salary|floatformat:2 }}</td></tr>
+       <tr><td{% if teams.0.sum11_salary > teams.1.sum11_salary %} class="hl"{% endif %}>{{ teams.0.sum11_salary }}</td><td class="title">{% trans "Top 11 Total Salary" %}</td><td{% if teams.0.sum11_salary < teams.1.sum11_salary %} class="hl"{% endif %}>{{ teams.1.sum11_salary }}</td></tr>
+       <tr><td{% if teams.0.avg11_salary > teams.1.avg11_salary %} class="hl"{% endif %}>{{ teams.0.avg11_salary|floatformat:2 }}</td><td class="title">{% trans "Top 11 Avg. Salary" %}</td><td{% if teams.0.avg11_salary < teams.1.avg11_salary %} class="hl"{% endif %}>{{ teams.1.avg11_salary|floatformat:2 }}</td></tr>
+       <tr><td{% if teams.0.sumT_value > teams.1.sumT_value %} class="hl"{% endif %}>{{ teams.0.sumT_value }}</td><td class="title">{% trans "Total Value" %}</td><td{% if teams.0.sumT_value < teams.1.sumT_value %} class="hl"{% endif %}>{{ teams.1.sumT_value }}</td></tr>
+       <tr><td{% if teams.0.avgT_value > teams.1.avgT_value %} class="hl"{% endif %}>{{ teams.0.avgT_value|floatformat:2 }}</td><td class="title">{% trans "Average Value" %}</td><td{% if teams.0.avgT_value < teams.1.avgT_value %} class="hl"{% endif %}>{{ teams.1.avgT_value|floatformat:2 }}</td></tr>
+       <tr><td{% if teams.0.sumM_value > teams.1.sumM_value %} class="hl"{% endif %}>{{ teams.0.sumM_value }}</td><td class="title">{% trans "Seniors Total Value" %}</td><td{% if teams.0.sumM_value < teams.1.sumM_value %} class="hl"{% endif %}>{{ teams.1.sumM_value }}</td></tr>
+       <tr><td{% if teams.0.avgM_value > teams.1.avgM_value %} class="hl"{% endif %}>{{ teams.0.avgM_value|floatformat:2 }}</td><td class="title">{% trans "Seniors Avg. Value" %}</td><td{% if teams.0.avgM_value < teams.1.avgM_value %} class="hl"{% endif %}>{{ teams.1.avgM_value|floatformat:2 }}</td></tr>
+       <tr><td{% if teams.0.sum11_value > teams.1.sum11_value %} class="hl"{% endif %}>{{ teams.0.sum11_value }}</td><td class="title">{% trans "Top 11 Total Value" %}</td><td{% if teams.0.sum11_value < teams.1.sum11_value %} class="hl"{% endif %}>{{ teams.1.sum11_value }}</td></tr>
+       <tr><td{% if teams.0.avg11_value > teams.1.avg11_value %} class="hl"{% endif %}>{{ teams.0.avg11_value|floatformat:2 }}</td><td class="title">{% trans "Top 11 Avg. Value" %}</td><td{% if teams.0.avg11_value < teams.1.avg11_value %} class="hl"{% endif %}>{{ teams.1.avg11_value|floatformat:2 }}</td></tr>
+       <tr><td{% if teams.0.avgT_age > teams.1.avgT_age %} class="hl"{% endif %}>{{ teams.0.avgT_age|floatformat:2 }}</td><td class="title">{% trans "Average Age" %}</td><td{% if teams.0.avgT_age < teams.1.avgT_age %} class="hl"{% endif %}>{{ teams.1.avgT_age|floatformat:2 }}</td></tr>
+       <tr><td{% if teams.0.avgM_age > teams.1.avgM_age %} class="hl"{% endif %}>{{ teams.0.avgM_age|floatformat:2 }}</td><td class="title">{% trans "Seniors Avg. Age" %}</td><td{% if teams.0.avgM_age < teams.1.avgM_age %} class="hl"{% endif %}>{{ teams.1.avgM_age|floatformat:2 }}</td></tr>
+       <tr><td{% if teams.0.avg11_age > teams.1.avg11_age %} class="hl"{% endif %}>{{ teams.0.avg11_age|floatformat:2 }}</td><td class="title">{% trans "Top 11 Avg. Age" %}</td><td{% if teams.0.avg11_age < teams.1.avg11_age %} class="hl"{% endif %}>{{ teams.1.avg11_age|floatformat:2 }}</td></tr>
+       <tr><td{% if teams.0.max_value.1 > teams.1.max_value.1 %} class="hl"{% endif %}>{{ teams.0.max_value.0 }}<br />{{ teams.0.max_value.1 }}</td><td class="title">{% trans "Most Valuable Player" %}</td><td{% if teams.0.max_value.1 < teams.1.max_value.1 %} class="hl"{% endif %}>{{ teams.1.max_value.0 }}<br />{{ teams.1.max_value.1 }}</td></tr>
+       <tr><td{% if teams.0.max_salary.1 > teams.1.max_salary.1 %} class="hl"{% endif %}>{{ teams.0.max_salary.0 }}<br />{{ teams.0.max_salary.1 }}</td><td class="title">{% trans "Highest Paid Player" %}</td><td{% if teams.0.max_salary.1 < teams.1.max_salary.1 %} class="hl"{% endif %}>{{ teams.1.max_salary.0 }}<br />{{ teams.1.max_salary.1 }}</td></tr>
+       <tr><td{% if teams.0.max_age.1 > teams.1.max_age.1 %} class="hl"{% endif %}>{{ teams.0.max_age.0 }}<br />{{ teams.0.max_age.1 }}</td><td class="title">{% trans "Oldest Player" %}</td><td{% if teams.0.max_age.1 < teams.1.max_age.1 %} class="hl"{% endif %}>{{ teams.1.max_age.0 }}<br />{{ teams.1.max_age.1 }}</td></tr>
+    {% endautoescape %}
+    </tbody>
+</table>
+<div class="adSmall">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-5254492723947467";
+    /* MZC-banner1 */
+    google_ad_slot = "0405715103";
+    google_ad_width = 468;
+    google_ad_height = 60;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+/* TEAM */
+    Author: Jonathan Reyes
+    Contact: jonathan [at] mzcompare.com
+    Location: Quito, Ecuador
+
+/* THANKS */
+    Federations: FEF-MZ
+    The Zone Magazines: EC, ES, CL
+
+/* SITE */
+    Last update: 2011/07/01
+    Language: English / Español / Português
+    Doctype: HTML5
+    Components: jQuery, jQuery UI, tablesorter, Python
+    IDE: Eclipse

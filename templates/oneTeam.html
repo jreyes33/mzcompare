@@ -1,0 +1,169 @@
+{% extends "_base.html" %}
+{% load i18n %}
+
+{% block extraCSS %}
+<link rel="stylesheet" type="text/css" href="static/css/mzc/jquery-ui-1.8.13.custom.css" />
+<link rel="stylesheet" type="text/css" href="static/css/pager/jquery.tablesorter.pager.css" />
+<link rel="stylesheet" type="text/css" href="static/css/blue/style.css" />
+{% endblock %}
+
+{% block extraJS %}
+<script type="text/javascript" src="static/js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="static/js/jquery-ui-1.8.13.custom.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.tablesorter.pager.js"></script>
+<script type="text/javascript">
+jQuery.tablesorter.addParser({
+    id: "spacedDigit",
+    is: function(s, table) {
+        var c = table.config;
+        return jQuery.tablesorter.isDigit(s.replace(/&nbsp;/g, ""), c);
+    },
+    format: function(s) {
+        return jQuery.tablesorter.formatFloat(s.replace(/&nbsp;/g, ""));
+    },
+    type: "numeric"
+});
+
+$(document).ready(function() {
+    /* tablesorter */
+	$("#standings").tablesorter({widgets: ['zebra'], sortList: [[0,0]]});
+    $("#teams").tablesorter({sortList: [[10,1]]});
+    $("#best").tablesorter({sortList: [[4,1]]});
+    $("#players").tablesorter({widthFixed: true, sortList: [[3,1]]});
+    $("#players").tablesorterPager({container: $("#pager"), size: 20, positionFixed: false});
+    /* jquery-ui */
+    $("#tabs").tabs({cache: true, ajaxOptions: {cache: false}});
+    $("#accordion").accordion({autoHeight: false, navigation: true});
+    $("#tabs").bind("tabsload", function() {
+        $("#played").tablesorter({widgets: ['zebra'], headers:{4:{sorter:false}}});
+        $("#scheduled").tablesorter({widgets: ['zebra'], headers:{4:{sorter:false}}});
+    });
+});
+</script>
+{% endblock %}
+
+{% block content %}
+<div id="tabs">
+    <ul>
+        {% block tabs %}
+        <li><a href="#tabs-1">{% trans "League" %}</a></li>
+        <li><a href="./matches?&tid={{ teamId }}&played=1">{% trans "Played matches" %}</a></li>
+        <li><a href="./matches?&tid={{ teamId }}&played=0">{% trans "Scheduled matches" %}</a></li>
+        {% endblock %}
+    </ul>
+    <div id="tabs-1">
+    <div id="accordion">
+        {% block standings %}
+        <h2><a href="#standings">{% trans "Standings" %}</a></h2>
+        <div>
+        <table class="tablesorter" id="standings">
+            <thead><tr><th>#&nbsp;</th><th>{% trans "Team" %}</th><th>{% trans '<abbr title="Matches played">M</abbr>' %}&nbsp;</th><th>{% trans '<abbr title="Won">W</abbr>' %}&nbsp;</th><th>{% trans '<abbr title="Drawn">D</abbr>' %}&nbsp;</th><th>{% trans '<abbr title="Lost">L</abbr>' %}&nbsp;</th><th>{% trans '<abbr title="Goals scored">+</abbr>' %}&nbsp;</th><th>{% trans '<abbr title="Goals conceded">-</abbr>' %}&nbsp;</th><th>{% trans '<abbr title="Goal difference">=</abbr>' %}&nbsp;</th><th>{% trans '<abbr title="Points">P</abbr>' %}&nbsp;</th></tr></thead>
+            <tbody>
+            {% for team in standings %}
+            {% autoescape off %}
+            <tr><td>{{ team.pos }}</td><td>{{ team.teamName }}</td><td>{{ team.played }}</td><td>{{ team.won }}</td><td>{{ team.drawn }}</td><td>{{ team.lost }}</td><td>{{ team.goalsPlus }}</td><td>{{ team.goalsMinus }}</td><td>{{ team.goalsDifference }}</td><td>{{ team.points }}</td></tr>
+            {% endautoescape %}
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+        {% endblock %}
+        
+        {% block teams %}
+        <h2><a href="#teams">{% trans "Teams' stats" %}</a></h2>
+        <div>
+        <table class="tablesorter" id="teams">
+            <caption>*{% trans "All values are shown in" %} {{ teams.0.teamCurrency }}&nbsp;</caption>
+	        <thead><tr><th>{% trans "Team" %}</th><th>{% trans '<abbr title="Players">P</abbr>' %}</th><th>{% trans '<abbr title="Seniors">Sr.</abbr>' %}</th><th>{% trans '<abbr title="Youth players">Y</abbr>' %}</th><th>{% trans '<abbr title="Foreign players">F</abbr>' %}</th><th>{% trans "Total Salary" %}</th><th>{% trans "Avg. Salary" %}</th><th>{% trans "Total Value" %}</th><th>{% trans "Avg. Value" %}</th><th>{% trans '<abbr title="Seniors Total Value">Sr. Tot. Value</abbr>' %}</th><th>{% trans '<abbr title="Seniors Average Value">Sr. Avg. Value</abbr>' %}</th><th>{% trans "Avg. Age" %}</th><th>{% trans '<abbr title="Seniors Average Age">Sr. Avg. Age</abbr>' %}</th></tr></thead>
+	        <tbody>
+	        {% for team in teams %}
+	        {% autoescape off %}
+	        <tr{% if team.highlight  %} class="hl"{% endif %}><td>{{ team.teamName }}</td><td>{{ team.nJug }}</td><td>{{ team.nMay }}</td><td>{{ team.nJuv }}</td><td>{{ team.nExt }}</td><td>{{ team.sumM_salary }}</td><td>{{ team.avgM_salary|floatformat:2 }}</td><td>{{ team.sumT_value }}</td><td>{{ team.avgT_value|floatformat:2 }}</td><td>{{ team.sumM_value }}</td><td>{{ team.avgM_value|floatformat:2 }}</td><td>{{ team.avgT_age|floatformat:2 }}</td><td>{{ team.avgM_age|floatformat:2 }}</td></tr>
+	        {% endautoescape %}
+	        {% endfor %}
+	        </tbody>
+        </table>
+        <div class="adSmall">
+            <script type="text/javascript"><!--
+            google_ad_client = "ca-pub-5254492723947467";
+            /* MZC-banner1 */
+            google_ad_slot = "0405715103";
+            google_ad_width = 468;
+            google_ad_height = 60;
+            //-->
+            </script>
+            <script type="text/javascript"
+            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+            </script>
+        </div>
+        
+        {% block best %}
+        <h2>{% trans "Top 11" %}</h2>
+        <table class="tablesorter" id="best">
+            <caption>*{% trans "All values are shown in" %} {{ teams.0.teamCurrency }}&nbsp;</caption>
+            <thead><tr><th>{% trans "Team" %}</th><th>{% trans "Total Salary" %}</th><th>{% trans "Avg. Salary" %}</th><th>{% trans "Total Value" %}</th><th>{% trans "Avg. Value" %}</th><th>{% trans "Avg. Age" %}</th></tr></thead>
+            <tbody>
+            {% for team in teams %}
+            {% autoescape off %}
+            <tr{% if team.highlight  %} class="hl"{% endif %}><td>{{ team.teamName }}</td><td>{{ team.sum11_salary }}</td><td>{{ team.avg11_salary|floatformat:2 }}</td><td>{{ team.sum11_value }}</td><td>{{ team.avg11_value|floatformat:2 }}</td><td>{{ team.avg11_age|floatformat:2 }}</td></tr>
+            {% endautoescape %}
+            {% endfor %}
+            </tbody>
+        </table>
+        {% endblock %}
+        
+        </div>
+        {% endblock %}
+
+        {% block players %}
+        <h2><a href="#players">{% trans "All players" %}</a></h2>
+        <div>
+        <div class="adSmall">
+	        <script type="text/javascript"><!--
+			google_ad_client = "ca-pub-5254492723947467";
+			/* MZC-banner2 */
+			google_ad_slot = "0598372989";
+			google_ad_width = 468;
+			google_ad_height = 60;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+		</div>
+        <table class="tablesorter" id="players">
+            <caption>*{% trans "All values are shown in" %} {{ teams.0.teamCurrency }}&nbsp;</caption>
+            <thead><tr><th>{% trans "Country" %}</th><th>{% trans "Team" %}</th><th>{% trans "Player" %}</th><th>{% trans "Value" %}</th><th>{% trans "Salary" %}</th><th>{% trans "Age" %}</th></tr></thead>
+            <tbody>
+            {% for team in teams %}
+            {% for p in team.players %}
+            {% autoescape off %}
+            <tr{% if team.highlight %} class="hl"{% endif %}><td><img src="static/img/flags/{{ p.countryShortname }}.png" alt="{{ p.countryShortname }}" title="{{ p.countryShortname }}" /></td><td>{{ team.teamName }}</td><td>{{ p.name }}</td><td>{{ p.value }}</td><td>{{ p.salary }}</td><td>{{ p.age }}</td></tr>
+            {% endautoescape %}
+            {% endfor %}
+            {% endfor %}
+            </tbody>
+        </table>
+        <div id="pager" class="tablesorterPager">
+	        <form>
+		        <img src="static/css/pager/icons/first.png" class="first" />
+		        <img src="static/css/pager/icons/prev.png" class="prev" />
+		        <input type="text" class="pagedisplay" />
+		        <img src="static/css/pager/icons/next.png" class="next" />
+		        <img src="static/css/pager/icons/last.png" class="last" />
+		        <select class="pagesize">
+		            <option value="10">10</option>
+		            <option selected="selected" value="20">20</option>
+		            <option value="30">30</option>
+		            <option value="40">40</option>
+		            <option value="50">50</option>
+		        </select>
+	        </form>
+        </div>
+        </div>
+        {% endblock %}
+    </div>
+    </div>
+</div>
+{% endblock %}

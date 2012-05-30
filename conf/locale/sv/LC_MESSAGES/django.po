@@ -1,0 +1,384 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+#   <wixxge@live.se>, 2011.
+# Jonathan Reyes <jonathan.reyes33@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: MZ Compare\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-11 18:48-0500\n"
+"PO-Revision-Date: 2011-07-12 10:36-0500\n"
+"Last-Translator: Jonathan Reyes <jonathan.reyes33@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: conf/settings.py:8
+msgid "English"
+msgstr "Engelska"
+
+#: conf/settings.py:9
+#: templates/about.html:8
+msgid "Indonesian"
+msgstr "Indonesiska"
+
+#: conf/settings.py:10
+msgid "Spanish"
+msgstr "Spanska"
+
+#: conf/settings.py:11
+msgid "Portuguese"
+msgstr "Portugisiska"
+
+#: conf/settings.py:12
+#: templates/about.html:9
+msgid "Swedish"
+msgstr "Svenska"
+
+#: templates/_base.html:3
+msgid "en"
+msgstr "sv"
+
+#: templates/_base.html:21
+msgid "MZ Compare - ManagerZone Tool"
+msgstr "MZ Compare - ManagerZone verktyg"
+
+#: templates/_base.html:36
+msgid "Home"
+msgstr "Hem"
+
+#: templates/_base.html:37
+msgid "About"
+msgstr "Om oss"
+
+#: templates/_base.html:38
+msgid "Contact"
+msgstr "Kontakt"
+
+#: templates/_base.html:39
+msgid "Blog"
+msgstr "Blogg"
+
+#: templates/about.html:5
+msgid "MZ Compare is a tool written in <a href=\"http://python.org/\">Python</a> for <a href=\"http://managerzone.com\">ManagerZone</a>. It's developed and mantained by Jonathan Reyes (username: jreyes33), manager of the ecuadorian team \"Duros FC\" of 2nd division. The idea of developing a tool was motivated by curiosity and by need. The goal is to share something useful for all the managers."
+msgstr "MZ Compare är ett verktyg skrivet i <a href=\"http://python.org/\">Python</a> för <a href=\"http://managerzone.com\">ManagerZone</a> . Det är skapat och utvecklat av Jonathan Reyes (användarnamn: jreyes33), manager för det ecuadorianska laget \"Duros FC\" i 2:a divisionen. Tanken att utveckla ett verktyg kom av ren nyfikenhet samt att jag anser att det är ett nödvändigt verktyg. Syftet med detta verktyg är att dela med mig av något nyttigt som andra managers kan ha nytta av."
+
+#: templates/about.html:6
+msgid "Translation credits:"
+msgstr "Credit för översättning:"
+
+#: templates/about.html:13
+msgid "crest by jreyes33"
+msgstr "crest by jreyes33"
+
+#: templates/contact.html:5
+msgid "Got questions, comments, or suggestions?"
+msgstr "Har du frågor, kommentarer, eller förslag?"
+
+#: templates/contact.html:6
+msgid "Send an email to:"
+msgstr "Skicka ett e-mail till:"
+
+#: templates/contact.html:7
+msgid "You can also leave a message in my Guestbook in ManagerZone, username: jreyes33."
+msgstr "Du kan även lämna ett meddelande i min gästbok på ManagerZone, användarnamn: jreyes33."
+
+#: templates/error.html:5
+msgid "An error has occurred. Yeah, it can happen to anyone.<br /><br />Entered a valid username and you're still getting this error message? Report it to <a href=\"mailto:contact@mzcompare.com?subject=MZ Compare error report\">contact@mzcompare.com</a><br /><br />Thank you."
+msgstr "Ett fel har inträffat. Ja, det kan hända vem som helst. <br /><br /> Har du skrivit in ett giltigt användarnamn och fortfarande får detta felmeddelande? Rapportera det till <a href=\"mailto:contact@mzcompare.com?subject=MZ Compare error report\">contact@mzcompare.com</a> <br /><br /> Tack."
+
+#: templates/index.html:21
+msgid "Enter another username or team ID"
+msgstr "Skriv in ett annat användarnamn eller lag ID"
+
+#: templates/index.html:21
+#: templates/index.html.py:44
+msgid "Delete"
+msgstr "Radera"
+
+#: templates/index.html:42
+msgid "Enter one or more usernames or team IDs"
+msgstr "Skriv in ett eller flera användarnamn eller lag ID:n"
+
+#: templates/index.html:44
+msgid "Enter your username or team ID"
+msgstr "Skriv in ditt användarnamn eller lag ID"
+
+#: templates/index.html:46
+msgid "Add"
+msgstr "Lägg till"
+
+#: templates/index.html:46
+msgid "Compare"
+msgstr "Jämför"
+
+#: templates/index.html:49
+msgid " MZ Compare is a tool for <a href=\"http://managerzone.com\">ManagerZone</a> that allows you to rapidly compare your team with the rest of your league or with other users. Give it a try! Enter your username and click the <strong>Compare</strong> button to compare your team with your league, or click the <strong>Add</strong> button and enter more usernames to compare your team with theirs."
+msgstr "MZ Compare är ett verktyg för <a href=\"http://managerzone.com\">ManagerZone</a> som tillåter dig att snabbt jämföra ditt lag med resten av din liga eller med andra användare. Ge det ett försök! Ange ditt användarnamn och klicka på knappen <strong>Jämför</strong> för att jämföra ditt lag med din liga, eller klicka på knappen <strong>Lägg till</strong> och ange flera användarnamn för att jämföra ditt lag med deras."
+
+#: templates/matches.html:3
+msgid "Date"
+msgstr "Datum"
+
+#: templates/matches.html:4
+msgid "Type"
+msgstr "Typ"
+
+#: templates/matches.html:6
+msgid "Home Team"
+msgstr "Hemmalag"
+
+#: templates/matches.html:7
+msgid "Result"
+msgstr "Resultat"
+
+#: templates/matches.html:8
+msgid "Away Team"
+msgstr "Bortalag"
+
+#: templates/matches.html:17
+msgid "Compare these teams"
+msgstr "Jämför dessa lag"
+
+#: templates/moreTeams.html:35
+#: templates/twoTeams.html:40
+msgid "Teams"
+msgstr "Lag"
+
+#: templates/oneTeam.html:50
+msgid "League"
+msgstr "Liga"
+
+#: templates/oneTeam.html:51
+msgid "Played matches"
+msgstr "Spelade matcher"
+
+#: templates/oneTeam.html:52
+msgid "Scheduled matches"
+msgstr "Kommande matcher"
+
+#: templates/oneTeam.html:58
+msgid "Standings"
+msgstr "Tabell"
+
+#: templates/oneTeam.html:61
+#: templates/oneTeam.html.py:78
+#: templates/oneTeam.html:92
+#: templates/oneTeam.html.py:111
+#: templates/twoTeams.html:51
+msgid "Team"
+msgstr "Lag"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Matches played\">M</abbr>"
+msgstr "<abbr title=\"Spelade matcher\">S</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Won\">W</abbr>"
+msgstr "<abbr title=\"Vunna\">V</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Drawn\">D</abbr>"
+msgstr "<abbr title=\"Oavgjorda\">O</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Lost\">L</abbr>"
+msgstr "<abbr title=\"Förlorade\">F</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Goals scored\">+</abbr>"
+msgstr "<abbr title=\"Gjorda mål\">+</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Goals conceded\">-</abbr>"
+msgstr "<abbr title=\"Insläppta mål\">-</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Goal difference\">=</abbr>"
+msgstr "<abbr title=\"Målskillnad\">=</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Points\">P</abbr>"
+msgstr "<abbr title=\"Poäng\">P</abbr>"
+
+#: templates/oneTeam.html:74
+#: templates/twoTeams.html:44
+msgid "Teams' stats"
+msgstr "Lag statistik"
+
+#: templates/oneTeam.html:77
+#: templates/oneTeam.html.py:91
+#: templates/oneTeam.html:110
+#: templates/twoTeams.html:47
+msgid "All values are shown in"
+msgstr "Alla värden visas i"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Players\">P</abbr>"
+msgstr "<abbr title=\"Spelare\">P</abbr>"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Seniors\">Sr.</abbr>"
+msgstr "<abbr title=\"Seniorer\">Sr</abbr>"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Youth players\">Y</abbr>"
+msgstr "<abbr title=\"Juniorer\">Jr</abbr>"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Foreign players\">F</abbr>"
+msgstr "<abbr title=\"Utländska spelare\">Us</abbr>"
+
+#: templates/oneTeam.html:78
+#: templates/oneTeam.html.py:92
+#: templates/twoTeams.html:58
+msgid "Total Salary"
+msgstr "Total Lön"
+
+#: templates/oneTeam.html:78
+#: templates/oneTeam.html.py:92
+msgid "Avg. Salary"
+msgstr "Medellön"
+
+#: templates/oneTeam.html:78
+#: templates/oneTeam.html.py:92
+#: templates/twoTeams.html:62
+msgid "Total Value"
+msgstr "Totalt värde"
+
+#: templates/oneTeam.html:78
+#: templates/oneTeam.html.py:92
+msgid "Avg. Value"
+msgstr "medelvärde"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Seniors Total Value\">Sr. Tot. Value</abbr>"
+msgstr "<abbr title=\"Seniorernas totala värde\">Sr Tot. Värde</abbr>"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Seniors Average Value\">Sr. Avg. Value</abbr>"
+msgstr "<abbr title=\"Seniorernas medelvärde\">Sr Genomsnittliga Värde</abbr>"
+
+#: templates/oneTeam.html:78
+#: templates/oneTeam.html.py:92
+msgid "Avg. Age"
+msgstr "medelålder"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Seniors Average Age\">Sr. Avg. Age</abbr>"
+msgstr "<abbr title=\"Seniorernas Medelålder\">Sr medelålder</abbr>"
+
+#: templates/oneTeam.html:89
+msgid "Top 11"
+msgstr "Top 11"
+
+#: templates/oneTeam.html:107
+msgid "All players"
+msgstr "Alla spelare"
+
+#: templates/oneTeam.html:111
+#: templates/twoTeams.html:52
+msgid "Country"
+msgstr "Land"
+
+#: templates/oneTeam.html:111
+msgid "Player"
+msgstr "Spelare"
+
+#: templates/oneTeam.html:111
+msgid "Value"
+msgstr "Värde"
+
+#: templates/oneTeam.html:111
+msgid "Salary"
+msgstr "Lön"
+
+#: templates/oneTeam.html:111
+msgid "Age"
+msgstr "Ålder"
+
+#: templates/twoTeams.html:50
+msgid "Username"
+msgstr "Användarnamn"
+
+#: templates/twoTeams.html:53
+msgid "Division"
+msgstr "Division"
+
+#: templates/twoTeams.html:54
+msgid "Players"
+msgstr "Spelare"
+
+#: templates/twoTeams.html:55
+msgid "Seniors"
+msgstr "Seniorer"
+
+#: templates/twoTeams.html:56
+msgid "Youth Players"
+msgstr "Ungdomsspelare"
+
+#: templates/twoTeams.html:57
+msgid "Foreign Players"
+msgstr "Utländska spelare"
+
+#: templates/twoTeams.html:59
+msgid "Average Salary"
+msgstr "medellön"
+
+#: templates/twoTeams.html:60
+msgid "Top 11 Total Salary"
+msgstr "Top 11 Total lön"
+
+#: templates/twoTeams.html:61
+msgid "Top 11 Avg. Salary"
+msgstr "Top 11 medellön"
+
+#: templates/twoTeams.html:63
+msgid "Average Value"
+msgstr "medelvärde"
+
+#: templates/twoTeams.html:64
+msgid "Seniors Total Value"
+msgstr "Seniorernas sammanlagda värde"
+
+#: templates/twoTeams.html:65
+msgid "Seniors Avg. Value"
+msgstr "Seniorernas genomsnittliga värde"
+
+#: templates/twoTeams.html:66
+msgid "Top 11 Total Value"
+msgstr "Top 11 totala värde"
+
+#: templates/twoTeams.html:67
+msgid "Top 11 Avg. Value"
+msgstr "Top 11 medelvärde"
+
+#: templates/twoTeams.html:68
+msgid "Average Age"
+msgstr "Genomsnittlig Ålder"
+
+#: templates/twoTeams.html:69
+msgid "Seniors Avg. Age"
+msgstr "Seniorernas medelålder"
+
+#: templates/twoTeams.html:70
+msgid "Top 11 Avg. Age"
+msgstr "Top 11 medelålder"
+
+#: templates/twoTeams.html:71
+msgid "Most Valuable Player"
+msgstr "Mest värdefulla spelare"
+
+#: templates/twoTeams.html:72
+msgid "Highest Paid Player"
+msgstr "Bäst betalda spelare"
+
+#: templates/twoTeams.html:73
+msgid "Oldest Player"
+msgstr "Äldsta spelare"
+

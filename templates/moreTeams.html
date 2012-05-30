@@ -1,0 +1,44 @@
+{% extends "oneTeam.html" %}
+{% load i18n %}
+
+{% block extraJS %}
+<script type="text/javascript" src="static/js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="static/js/jquery-ui-1.8.13.custom.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.tablesorter.pager.js"></script>
+<script type="text/javascript">
+jQuery.tablesorter.addParser({
+    id: "spacedDigit",
+    is: function(s, table) {
+        var c = table.config;
+        return jQuery.tablesorter.isDigit(s.replace(/&nbsp;/g, ""), c);
+    },
+    format: function(s) {
+        return jQuery.tablesorter.formatFloat(s.replace(/&nbsp;/g, ""));
+    },
+    type: "numeric"
+});
+
+$(document).ready(function() {
+    /* tablesorter */
+    $("#teams").tablesorter({sortList: [[10,1]]});
+    $("#best").tablesorter({sortList: [[4,1]]});
+    $("#players").tablesorter({widthFixed: true, sortList: [[3,1]]});
+    $("#players").tablesorterPager({container: $("#pager"), size: 20, positionFixed: false});
+    /* jquery-ui */
+    $("#tabs").tabs({cache: true, ajaxOptions: {cache: false}});
+    $("#accordion").accordion({autoHeight: false, navigation: true});
+    $("#tabs").bind("tabsload", function() {
+        $("#played").tablesorter({widgets: ['zebra'], headers:{4:{sorter:false}}});
+        $("#scheduled").tablesorter({widgets: ['zebra'], headers:{4:{sorter:false}}});
+    });
+});
+</script>
+{% endblock %}
+
+{% block tabs %}
+<li><a href="#tabs-1">{% trans "Teams" %}</a></li>
+<li><a href="./matches?&tid={{ teamId }}&played=1">{% trans "Played matches" %}</a></li>
+<li><a href="./matches?&tid={{ teamId }}&played=0">{% trans "Scheduled matches" %}</a></li>
+{% endblock %}
+{% block standings %}{% endblock %}

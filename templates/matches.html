@@ -1,0 +1,23 @@
+{% load i18n %}
+<table class="tablesorter" id="{{ played|yesno:"played,scheduled" }}">
+<thead><tr><th>{% trans "Date" %}</th>
+<th>{% trans "Type" %}</th>
+<th>&nbsp;</th>
+<th>{% trans "Home Team" %}</th>
+<th>{% trans "Result" %}</th>
+<th>{% trans "Away Team" %}</th>
+<th>&nbsp;</th></tr></thead>
+<tbody>
+{% for m in matches|dictsort:"order" %}
+<tr>
+<td>{{ m.date }}</td>
+<td>{{ m.type|default:"other" }}</td>
+<td><img src="static/img/flags/{{ m.home.countryShortname }}.png" alt="{{ m.home.countryShortname }}" title="{{ m.home.countryShortname }}" /></td>
+<td class="home">{{ m.home.teamName }}</td>
+<td class="result"><a href="./match?played={{ played|yesno:"1,0" }}&tid={{ tid }}&mid={{ m.id }}" title="{% trans "Compare these teams" %}">{% if played %}{{ m.home.goals }}{% else %}?{% endif %} - {% if played %}{{ m.away.goals }}{% else %}?{% endif %}</a></td>
+<td class="away">{{ m.away.teamName }}</td>
+<td><img src="static/img/flags/{{ m.away.countryShortname }}.png" alt="{{ m.away.countryShortname }}" title="{{ m.away.countryShortname }}" /></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>

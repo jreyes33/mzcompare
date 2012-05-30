@@ -1,0 +1,396 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: MZ Compare\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-11 19:42-0500\n"
+"PO-Revision-Date: 2011-07-12 10:32-0500\n"
+"Last-Translator: Jonathan Reyes <jonathan.reyes33@gmail.com>\n"
+"Language-Team: MZ Compare <contacto@mzcompare.com>\n"
+"Language: Español\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: conf/settings.py:8
+msgid "English"
+msgstr "Inglés"
+
+#: conf/settings.py:9
+#: templates/about.html:8
+msgid "Indonesian"
+msgstr "Indonesio"
+
+#: conf/settings.py:10
+msgid "Spanish"
+msgstr "Español"
+
+#: conf/settings.py:11
+msgid "Portuguese"
+msgstr "Portugués"
+
+#: conf/settings.py:12
+#: templates/about.html:9
+msgid "Swedish"
+msgstr "Sueco"
+
+#: templates/_base.html:3
+msgid "en"
+msgstr "es"
+
+#: templates/_base.html:21
+msgid "MZ Compare - ManagerZone Tool"
+msgstr "MZ Compare - Herramienta para ManagerZone"
+
+#: templates/_base.html:36
+msgid "Home"
+msgstr "Inicio"
+
+#: templates/_base.html:37
+msgid "About"
+msgstr "Acerca de"
+
+#: templates/_base.html:38
+msgid "Contact"
+msgstr "Contacto"
+
+#: templates/_base.html:39
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/about.html:5
+msgid "MZ Compare is a tool written in <a href=\"http://python.org/\">Python</a> for <a href=\"http://managerzone.com\">ManagerZone</a>. It's developed and mantained by Jonathan Reyes (username: jreyes33), manager of the ecuadorian team \"Duros FC\" of 2nd division. The idea of developing a tool was motivated by curiosity and by need. The goal is to share something useful for all the managers."
+msgstr "MZ Compare es una herramienta escrita en <a href=\"http://www.python.org/\">Python</a> para <a href=\"http://managerzone.com\">ManagerZone</a>. Es desarrollada y mantenida por Jonathan Reyes (usuario: jreyes33), mánager del equipo ecuatoriano \"Duros FC\" de 2ª división. La idea de desarrollar una herramienta nació en parte por curiosidad y en parte por necesidad. El objetivo es brindar algo útil para todos los mánagers."
+
+#: templates/about.html:6
+msgid "Translation credits:"
+msgstr "Créditos de las traducciones:"
+
+#: templates/about.html:13
+msgid "crest by jreyes33"
+msgstr "escudo por jreyes33"
+
+#: templates/contact.html:5
+msgid "Got questions, comments, or suggestions?"
+msgstr "¿Preguntas, comentarios o sugerencias?"
+
+#: templates/contact.html:6
+msgid "Send an email to:"
+msgstr "Envía un correo electrónico a:"
+
+#: templates/contact.html:7
+msgid "You can also leave a message in my Guestbook in ManagerZone, username: jreyes33."
+msgstr "También puedes dejar una nota en mi Guestbook en ManagerZone, usuario: jreyes33."
+
+#: templates/error.html:5
+msgid "An error has occurred. Yeah, it can happen to anyone.<br /><br />Entered a valid username and you're still getting this error message? Report it to <a href=\"mailto:contact@mzcompare.com?subject=MZ Compare error report\">contact@mzcompare.com</a><br /><br />Thank you."
+msgstr "Ha ocurrido un error. Sí, le puede pasar a cualquiera.<br /><br />¿Ingresaste un nombre de usuario válido y sigues obteniendo un error? Repórtalo a: <a href=\"mailto:contact@mzcompare.com?subject=Reporte de error de MZ Compare\">contact@mzcompare.com</a><br /><br />Muchas gracias."
+
+#: templates/index.html:21
+msgid "Enter another username or team ID"
+msgstr "Ingresa otro usuario o ID de equipo"
+
+#: templates/index.html:21
+#: templates/index.html.py:44
+msgid "Delete"
+msgstr "Borrar"
+
+#: templates/index.html:42
+msgid "Enter one or more usernames or team IDs"
+msgstr "Ingresa uno o más usuarios o IDs de equipo"
+
+#: templates/index.html:44
+msgid "Enter your username or team ID"
+msgstr "Ingresa tu usuario o ID de equipo"
+
+#: templates/index.html:46
+msgid "Add"
+msgstr "Añadir"
+
+#: templates/index.html:46
+msgid "Compare"
+msgstr "Comparar"
+
+#: templates/index.html:49
+msgid " MZ Compare is a tool for <a href=\"http://managerzone.com\">ManagerZone</a> that allows you to rapidly compare your team with the rest of your league or with other users. Give it a try! Enter your username and click the <strong>Compare</strong> button to compare your team with your league, or click the <strong>Add</strong> button and enter more usernames to compare your team with theirs."
+msgstr "MZ Compare es una herramienta para <a href=\"http://managerzone.com\">ManagerZone</a> que te permite comparar rápidamente tu equipo con el resto de tu liga o con otros usuarios. ¡Pruébalo! Ingresa tu usuario y haz clic en el botón <strong>Comparar</strong> para comparar tu equipo con tu liga, o haz clic en el botón <strong>Añadir</strong> e ingresa más usuarios para comparar tu equipo con el de ellos."
+
+#: templates/matches.html:3
+msgid "Date"
+msgstr "Fecha"
+
+#: templates/matches.html:4
+msgid "Type"
+msgstr "Tipo"
+
+#: templates/matches.html:6
+msgid "Home Team"
+msgstr "Local"
+
+#: templates/matches.html:7
+msgid "Result"
+msgstr "Resultado"
+
+#: templates/matches.html:8
+msgid "Away Team"
+msgstr "Visitante"
+
+#: templates/matches.html:17
+msgid "Compare these teams"
+msgstr "Comparar estos equipos"
+
+#: templates/moreTeams.html:40
+#: templates/twoTeams.html:44
+msgid "Teams"
+msgstr "Equipos"
+
+#: templates/moreTeams.html:41
+#: templates/oneTeam.html:51
+#: templates/twoTeams.html:45
+msgid "Played matches"
+msgstr "Partidos jugados"
+
+#: templates/moreTeams.html:42
+#: templates/oneTeam.html:52
+#: templates/twoTeams.html:46
+msgid "Scheduled matches"
+msgstr "Próximos partidos"
+
+#: templates/oneTeam.html:50
+msgid "League"
+msgstr "Liga"
+
+#: templates/oneTeam.html:58
+msgid "Standings"
+msgstr "Tabla de posiciones"
+
+#: templates/oneTeam.html:61
+#: templates/oneTeam.html.py:78
+#: templates/oneTeam.html:92
+#: templates/oneTeam.html.py:111
+#: templates/twoTeams.html:58
+msgid "Team"
+msgstr "Equipo"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Matches played\">M</abbr>"
+msgstr "<abbr title=\"Partidos jugados\">PJ</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Won\">W</abbr>"
+msgstr "<abbr title=\"Partidos ganados\">PG</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Drawn\">D</abbr>"
+msgstr "<abbr title=\"Partidos empatados\">PE</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Lost\">L</abbr>"
+msgstr "<abbr title=\"Partidos perdidos\">PP</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Goals scored\">+</abbr>"
+msgstr "<abbr title=\"Goles a favor\">GF</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Goals conceded\">-</abbr>"
+msgstr "<abbr title=\"Goles en contra\">GC</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Goal difference\">=</abbr>"
+msgstr "<abbr title=\"Gol diferencia\">=</abbr>"
+
+#: templates/oneTeam.html:61
+msgid "<abbr title=\"Points\">P</abbr>"
+msgstr "<abbr title=\"Puntos\">Pts</abbr>"
+
+#: templates/oneTeam.html:74
+#: templates/twoTeams.html:51
+msgid "Teams' stats"
+msgstr "Estadísticas de los equipos"
+
+#: templates/oneTeam.html:77
+#: templates/oneTeam.html.py:91
+#: templates/oneTeam.html:110
+#: templates/twoTeams.html:54
+msgid "All values are shown in"
+msgstr "Todos los valores son mostrados en"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Players\">P</abbr>"
+msgstr "<abbr title=\"Jugadores\">Jug.</abbr>"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Seniors\">Sr.</abbr>"
+msgstr "<abbr title=\"Mayores\">May.</abbr>"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Youth players\">Y</abbr>"
+msgstr "<abbr title=\"Juveniles\">Juv.</abbr>"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Foreign players\">F</abbr>"
+msgstr "<abbr title=\"Extranjeros\">Ext.</abbr>"
+
+#: templates/oneTeam.html:78
+#: templates/oneTeam.html.py:92
+#: templates/twoTeams.html:65
+msgid "Total Salary"
+msgstr "Sueldo Total"
+
+#: templates/oneTeam.html:78
+#: templates/oneTeam.html.py:92
+msgid "Avg. Salary"
+msgstr "Sueldo Prom."
+
+#: templates/oneTeam.html:78
+#: templates/oneTeam.html.py:92
+#: templates/twoTeams.html:69
+msgid "Total Value"
+msgstr "Valor Total"
+
+#: templates/oneTeam.html:78
+#: templates/oneTeam.html.py:92
+msgid "Avg. Value"
+msgstr "Valor Prom."
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Seniors Total Value\">Sr. Tot. Value</abbr>"
+msgstr "<abbr title=\"Valor Total Mayores\">Valor Tot. May.</abbr>"
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Seniors Average Value\">Sr. Avg. Value</abbr>"
+msgstr "<abbr title=\"Valor Promedio Mayores\">Valor Prom. May.</abbr>"
+
+#: templates/oneTeam.html:78
+#: templates/oneTeam.html.py:92
+msgid "Avg. Age"
+msgstr "Edad Prom."
+
+#: templates/oneTeam.html:78
+msgid "<abbr title=\"Seniors Average Age\">Sr. Avg. Age</abbr>"
+msgstr "<abbr title=\"Edad Promedio Mayores\">Edad Prom. May.</abbr>"
+
+#: templates/oneTeam.html:89
+msgid "Top 11"
+msgstr "Mejor 11"
+
+#: templates/oneTeam.html:107
+msgid "All players"
+msgstr "Todos los jugadores"
+
+#: templates/oneTeam.html:111
+#: templates/twoTeams.html:59
+msgid "Country"
+msgstr "País"
+
+#: templates/oneTeam.html:111
+msgid "Player"
+msgstr "Jugador"
+
+#: templates/oneTeam.html:111
+msgid "Value"
+msgstr "Valor"
+
+#: templates/oneTeam.html:111
+msgid "Salary"
+msgstr "Sueldo"
+
+#: templates/oneTeam.html:111
+msgid "Age"
+msgstr "Edad"
+
+#: templates/twoTeams.html:57
+msgid "Username"
+msgstr "Usuario"
+
+#: templates/twoTeams.html:60
+msgid "Division"
+msgstr "División"
+
+#: templates/twoTeams.html:61
+msgid "Players"
+msgstr "Jugadores"
+
+#: templates/twoTeams.html:62
+msgid "Seniors"
+msgstr "Mayores"
+
+#: templates/twoTeams.html:63
+msgid "Youth Players"
+msgstr "Juveniles"
+
+#: templates/twoTeams.html:64
+msgid "Foreign Players"
+msgstr "Extranjeros"
+
+#: templates/twoTeams.html:66
+msgid "Average Salary"
+msgstr "Sueldo Promedio"
+
+#: templates/twoTeams.html:67
+msgid "Top 11 Total Salary"
+msgstr "Sueldo Total Mejor 11"
+
+#: templates/twoTeams.html:68
+msgid "Top 11 Avg. Salary"
+msgstr "Sueldo Prom. Mejor 11"
+
+#: templates/twoTeams.html:70
+msgid "Average Value"
+msgstr "Valor Promedio"
+
+#: templates/twoTeams.html:71
+msgid "Seniors Total Value"
+msgstr "Valor Total Mayores"
+
+#: templates/twoTeams.html:72
+msgid "Seniors Avg. Value"
+msgstr "Valor Prom. Mayores"
+
+#: templates/twoTeams.html:73
+msgid "Top 11 Total Value"
+msgstr "Valor Total Mejor 11"
+
+#: templates/twoTeams.html:74
+msgid "Top 11 Avg. Value"
+msgstr "Valor Prom. Mejor 11"
+
+#: templates/twoTeams.html:75
+msgid "Average Age"
+msgstr "Edad Promedio"
+
+#: templates/twoTeams.html:76
+msgid "Seniors Avg. Age"
+msgstr "Edad Prom. Mayores"
+
+#: templates/twoTeams.html:77
+msgid "Top 11 Avg. Age"
+msgstr "Edad Prom. Mejor 11"
+
+#: templates/twoTeams.html:78
+msgid "Most Valuable Player"
+msgstr "Jugador Más Valioso"
+
+#: templates/twoTeams.html:79
+msgid "Highest Paid Player"
+msgstr "Jugador Mejor Pagado"
+
+#: templates/twoTeams.html:80
+msgid "Oldest Player"
+msgstr "Jugador Más Viejo"
+
+#~ msgid "Best 11"
+#~ msgstr "Mejor 11"
+
+#~ msgid "Blog (in Spanish)"
+#~ msgstr "Blog"
+
+#~ msgid "Powered by Google App Engine"
+#~ msgstr "Powered by Google App Engine"
