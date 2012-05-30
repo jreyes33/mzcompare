@@ -2,7 +2,7 @@ from mzc.parser import SeriresParser, ManagerParser
 from mzc.equipo import Equipo
 
 
-class Liga(object):
+class League(object):
     """Liga oficial de MZ"""
 
     def __init__(self, usuario):

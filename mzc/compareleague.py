@@ -1,12 +1,12 @@
-from mzc.liga import Liga
+from mzc.liga import League
 
 
-class ComparaLiga(object):
-    """Clase que controla y hace uso del resto de objetos en MZ Compare"""
-    
+class CompareLeague(object):
+    """Class to control and use the rest of object in MZ Compare"""
+
     def __init__(self, username):
         self.username = username
-        self.l = Liga(self.username)
+        self.l = League(self.username)
         self.l.obtener_detalles()
         for e in self.l.listaEquipos:
             e.hacer_enteros(['age', 'birthDay', 'birthSeason', 'salary',
@@ -17,11 +17,11 @@ class ComparaLiga(object):
             e.sacar_suma_prom('age', incluirJuves=True)
             e.sacar_suma_prom('value', incluirJuves=True)
             e.sacar_suma_prom('salary', incluirJuves=False)
-      
-    def getStandings(self):
+
+    def get_standings(self):
         return self.l.tablaPos
-        
-    def getTeams(self):
+
+    def get_teams(self):
         self.teams = []
         for e in self.l.listaEquipos:
             e.teamDict = dict(e.teamDict.items() + e.userDataDict.items())
@@ -31,5 +31,5 @@ class ComparaLiga(object):
             self.teams.append(e.teamDict)
             if e.teamDict['teamId'] == self.l.teamDict['teamId']:
                 e.teamDict['highlight'] = True
-        
+
         return self.teams, self.l.teamDict['teamId']

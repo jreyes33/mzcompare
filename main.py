@@ -13,7 +13,7 @@ from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
 from google.appengine.ext.webapp.util import run_wsgi_app
 
-from mzc.comparal import ComparaLiga
+from mzc.compareleague import CompareLeague
 from mzc.tcompare import TeamCompare
 from mzc.compare import get_teams_from_match, get_match_dict
 from mzc.storedata import save_team
@@ -45,7 +45,7 @@ class I18NRequestHandler(webapp.RequestHandler):
 
 class StaticPage(I18NRequestHandler):
     """Serves 'static' pages"""
-    
+
     def get(self, page):
         lang = self.request.get('l')
         if lang:
@@ -71,7 +71,7 @@ class StaticPage(I18NRequestHandler):
 
 class MatchCompare(I18NRequestHandler):
     """Runs the script for a specific match"""
-    
+
     def get(self):
         self.tid = self.request.get('tid')
         self.mid = self.request.get('mid')
@@ -82,7 +82,7 @@ class MatchCompare(I18NRequestHandler):
 
 class MatchList(I18NRequestHandler):
     """Returns the list of played or scheduled matches"""
-    
+
     def get(self):
         self.tid = self.request.get('tid')
         self.jug = bool(int(self.request.get('played')))
@@ -97,11 +97,11 @@ class MatchList(I18NRequestHandler):
 
 class Compare(I18NRequestHandler):
     """Runs the script using to usernames passed"""
-    
+
     def get(self, teams):
         try:
             lang = self.request.get('l')
-            getTeams = self.request.get_all('u')
+            get_teams = self.request.get_all('u')
             teams = teams.split('%2C')
             while '' in teams:
                 teams.remove('')
@@ -113,14 +113,14 @@ class Compare(I18NRequestHandler):
             teams = temp
             if lang:
                 self.request.COOKIES.set_cookie("language", lang)
-            if getTeams:
-                self.redirect("./mzc:" + ",".join(getTeams), permanent=True)
+            if get_teams:
+                self.redirect("./mzc:" + ",".join(get_teams), permanent=True)
             elif lang:
                 self.redirect("./mzc:" + ",".join(teams), permanent=True)
             elif len(teams) == 1:
-                cL = ComparaLiga(teams[0])
-                standings = cL.getStandings()
-                teamsList, teamId = cL.getTeams()
+                cL = CompareLeague(teams[0])
+                standings = cL.get_standings()
+                teamsList, teamId = cL.get_teams()
                 for t in teamsList:
                     save_team(t)
                 path = os.path.join(os.path.dirname(__file__),
@@ -131,7 +131,7 @@ class Compare(I18NRequestHandler):
                                              'teamId': teamId}))
             elif len(teams) == 2:
                 cE = TeamCompare(teams)
-                teamsList, teamId = cE.getTeams()
+                teamsList, teamId = cE.get_teams()
                 path = os.path.join(os.path.dirname(__file__),
                                     "templates", "twoTeams.html")
                 self.response.out.write(template.render(path,
@@ -139,7 +139,7 @@ class Compare(I18NRequestHandler):
                                              'teamId': teamId}))
             elif teams and len(teams) <= 6:
                 cE = TeamCompare(teams)
-                teamsList, teamId = cE.getTeams()
+                teamsList, teamId = cE.get_teams()
                 path = os.path.join(os.path.dirname(__file__),
                                     "templates", "moreTeams.html")
                 self.response.out.write(template.render(path,
@@ -153,7 +153,7 @@ class Compare(I18NRequestHandler):
             self.response.out.write(template.render(path, {}))
 
 
-def main():    
+def main():
     application = webapp.WSGIApplication([(r'/mzc%3A(.*)', Compare),
                                           (r'/compare(.*)', Compare),
                                           ('/matches', MatchList),
@@ -162,6 +162,6 @@ def main():
                                          ],
                                          debug=False)
     run_wsgi_app(application)
-    
+
 if __name__ == "__main__":
     main()

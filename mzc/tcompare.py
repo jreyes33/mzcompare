@@ -27,7 +27,7 @@ class TeamCompare(object):
                 e.obtener_max('salary', True)
                 e.obtener_max('value', True)
         
-    def getTeams(self):
+    def get_teams(self):
         self.teams = []
         for e in self.c.listaEquipos:
             e.teamDict['players'] = []
