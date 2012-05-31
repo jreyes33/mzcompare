@@ -38,7 +38,7 @@ $(document).ready(function() {
 
 {% block tabs %}
 <li><a href="#tabs-1">{% trans "Teams" %}</a></li>
-<li><a href="./matches?&tid={{ teamId }}&played=1">{% trans "Played matches" %}</a></li>
-<li><a href="./matches?&tid={{ teamId }}&played=0">{% trans "Scheduled matches" %}</a></li>
+<li><a href="./matches?&tid={{ tid }}&played=1">{% trans "Played matches" %}</a></li>
+<li><a href="./matches?&tid={{ tid }}&played=0">{% trans "Scheduled matches" %}</a></li>
 {% endblock %}
 {% block standings %}{% endblock %}

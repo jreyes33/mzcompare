@@ -48,8 +48,8 @@ $(document).ready(function() {
     <ul>
         {% block tabs %}
         <li><a href="#tabs-1">{% trans "League" %}</a></li>
-        <li><a href="./matches?&tid={{ teamId }}&played=1">{% trans "Played matches" %}</a></li>
-        <li><a href="./matches?&tid={{ teamId }}&played=0">{% trans "Scheduled matches" %}</a></li>
+        <li><a href="./matches?&tid={{ tid }}&played=1">{% trans "Played matches" %}</a></li>
+        <li><a href="./matches?&tid={{ tid }}&played=0">{% trans "Scheduled matches" %}</a></li>
         {% endblock %}
     </ul>
     <div id="tabs-1">
@@ -79,7 +79,7 @@ $(document).ready(function() {
 	        <tbody>
 	        {% for team in teams %}
 	        {% autoescape off %}
-	        <tr{% if team.highlight  %} class="hl"{% endif %}><td>{{ team.teamName }}</td><td>{{ team.nJug }}</td><td>{{ team.nMay }}</td><td>{{ team.nJuv }}</td><td>{{ team.nExt }}</td><td>{{ team.sumM_salary }}</td><td>{{ team.avgM_salary|floatformat:2 }}</td><td>{{ team.sumT_value }}</td><td>{{ team.avgT_value|floatformat:2 }}</td><td>{{ team.sumM_value }}</td><td>{{ team.avgM_value|floatformat:2 }}</td><td>{{ team.avgT_age|floatformat:2 }}</td><td>{{ team.avgM_age|floatformat:2 }}</td></tr>
+	        <tr{% if team.highlight  %} class="hl"{% endif %}><td>{{ team.teamName }}</td><td>{{ team.nPla }}</td><td>{{ team.nSen }}</td><td>{{ team.nJun }}</td><td>{{ team.nFor }}</td><td>{{ team.sumS_salary }}</td><td>{{ team.avgS_salary|floatformat:2 }}</td><td>{{ team.sumT_value }}</td><td>{{ team.avgT_value|floatformat:2 }}</td><td>{{ team.sumS_value }}</td><td>{{ team.avgS_value|floatformat:2 }}</td><td>{{ team.avgT_age|floatformat:2 }}</td><td>{{ team.avgS_age|floatformat:2 }}</td></tr>
 	        {% endautoescape %}
 	        {% endfor %}
 	        </tbody>

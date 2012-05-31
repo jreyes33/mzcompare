@@ -13,8 +13,8 @@ from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
 from google.appengine.ext.webapp.util import run_wsgi_app
 
-from mzc.compareleague import CompareLeague
-from mzc.tcompare import TeamCompare
+from mzc.compareseries import CompareSeries
+from mzc.compareteams import CompareTeams
 from mzc.compare import get_teams_from_match, get_match_dict
 from mzc.storedata import save_team
 from cookies import Cookies
@@ -55,18 +55,18 @@ class StaticPage(I18NRequestHandler):
             page = "index.html"
         elif not page.endswith(".html"):
             page = "".join([page, ".html"])
-        self.langDict = {'en': "en_US",
-                         'es': "es_ES",
-                         'pt': "pt_BR",
-                         'id': "id_ID",
-                         'sv': "sv_SE"}
+        self.langs = {'en': "en_US",
+                      'es': "es_ES",
+                      'pt': "pt_BR",
+                      'id': "id_ID",
+                      'sv': "sv_SE"}
         try:
-            self.langFB = self.langDict[translation.get_language()[:2]]
+            self.fb_lang = self.langs[translation.get_language()[:2]]
         except:
-            self.langFB = "en_US"
+            self.fb_lang = "en_US"
         path = os.path.join(os.path.dirname(__file__), "templates", page)
         self.response.out.write(template.render(path,
-                      {'langFB': self.langFB}))
+                                                {'fb_lang': self.fb_lang}))
 
 
 class MatchCompare(I18NRequestHandler):
@@ -75,9 +75,9 @@ class MatchCompare(I18NRequestHandler):
     def get(self):
         self.tid = self.request.get('tid')
         self.mid = self.request.get('mid')
-        self.jug = bool(int(self.request.get('played')))
-        teamIds = get_teams_from_match(self.tid, self.mid, jugados=self.jug)
-        self.redirect("./mzc:" + ",".join(teamIds), permanent=True)
+        self.played = bool(int(self.request.get('played')))
+        team_ids = get_teams_from_match(self.tid, self.mid, played=self.played)
+        self.redirect("./mzc:" + ",".join(team_ids), permanent=True)
 
 
 class MatchList(I18NRequestHandler):
@@ -85,13 +85,13 @@ class MatchList(I18NRequestHandler):
 
     def get(self):
         self.tid = self.request.get('tid')
-        self.jug = bool(int(self.request.get('played')))
-        matchList = get_match_dict(self.tid, jugados=self.jug).values()
+        self.played = bool(int(self.request.get('played')))
+        self.matches = get_match_dict(self.tid, played=self.played).values()
         path = os.path.join(os.path.dirname(__file__),
                             "templates", "matches.html")
         self.response.out.write(template.render(path,
-                                {'matches': matchList,
-                                 'played': self.jug,
+                                {'matches': self.matches,
+                                 'played': self.played,
                                  'tid': self.tid}))
 
 
@@ -108,7 +108,7 @@ class Compare(I18NRequestHandler):
             temp = []
             for t in teams:
                 if not t in temp:
-                    t = t.replace("%20", "").strip()    #Delete spaces
+                    t = t.replace("%20", "").strip()    # Delete spaces
                     temp.append(t)
             teams = temp
             if lang:
@@ -118,33 +118,33 @@ class Compare(I18NRequestHandler):
             elif lang:
                 self.redirect("./mzc:" + ",".join(teams), permanent=True)
             elif len(teams) == 1:
-                cL = CompareLeague(teams[0])
-                standings = cL.get_standings()
-                teamsList, teamId = cL.get_teams()
-                for t in teamsList:
+                cs = CompareSeries(teams[0])
+                standings = cs.get_standings()
+                teams_list, tid = cs.get_teams()
+                for t in teams_list:
                     save_team(t)
                 path = os.path.join(os.path.dirname(__file__),
                                     "templates", "oneTeam.html")
                 self.response.out.write(template.render(path,
                                             {'standings': standings,
-                                             'teams': teamsList,
-                                             'teamId': teamId}))
+                                             'teams': teams_list,
+                                             'tid': tid}))
             elif len(teams) == 2:
-                cE = TeamCompare(teams)
-                teamsList, teamId = cE.get_teams()
+                cE = CompareTeams(teams)
+                teams_list, tid = cE.get_teams()
                 path = os.path.join(os.path.dirname(__file__),
                                     "templates", "twoTeams.html")
                 self.response.out.write(template.render(path,
-                                            {'teams': teamsList,
-                                             'teamId': teamId}))
+                                            {'teams': teams_list,
+                                             'tid': tid}))
             elif teams and len(teams) <= 6:
-                cE = TeamCompare(teams)
-                teamsList, teamId = cE.get_teams()
+                cE = CompareTeams(teams)
+                teams_list, tid = cE.get_teams()
                 path = os.path.join(os.path.dirname(__file__),
                                     "templates", "moreTeams.html")
                 self.response.out.write(template.render(path,
-                                            {'teams': teamsList,
-                                             'teamId': teamId}))
+                                            {'teams': teams_list,
+                                             'tid': tid}))
             else:
                 raise Exception
         except:
